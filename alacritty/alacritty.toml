@@ -1,0 +1,14 @@
+[window]
+padding = { x = 15, y = 30}
+dynamic_padding = true
+decorations = "Transparent"
+opacity = 0.9
+blur = true
+resize_increments = true
+
+[font]
+normal = { family = "MesloLGS NF", style = "Regular" }
+size = 11.6
+
+[terminal]
+osc52 = "CopyPaste"

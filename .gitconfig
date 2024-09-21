@@ -1,0 +1,10 @@
+[user]
+	name = chirpcel
+	email = git@mkersten.net
+	signingkey = ~/.ssh/git_sign.pub
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[pull]
+	rebase = true
