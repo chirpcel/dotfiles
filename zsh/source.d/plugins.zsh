@@ -20,3 +20,6 @@ if type brew &>/dev/null; then
     compinit
   fi
 rm -f ~/.zcompdump; compinit
+
+# atuin
+eval "$(atuin init zsh --disable-up-arrow)"
