@@ -77,7 +77,6 @@
         "git.useCommitInputAsStashMessage",
         "git.pullBeforeCheckout",
         "git.branchSortOrder",
-        "git.enableCommitSigning",
         "postman.telemetry.enabled",
         "gitmoji.asSuffix"
     ],
@@ -101,7 +100,6 @@
     "git.useCommitInputAsStashMessage": true,
     "git.pullBeforeCheckout": true,
     "git.branchSortOrder": "alphabetically",
-    "git.enableCommitSigning": true,
     "gitmoji.asSuffix": true,
     "git.confirmSync": false,
     "github.copilot.editor.enableAutoCompletions": true,
