@@ -11,5 +11,8 @@ resize_increments = true
 normal = { family = "MesloLGS NF", style = "Regular" }
 size = 11.6
 
+[cursor]
+style = { shape = "Beam", blinking = "on" }
+
 [terminal]
 osc52 = "CopyPaste"
