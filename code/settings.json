@@ -113,5 +113,6 @@
     "parallels-desktop.extension.start-machines-headless-by-default": true,
     "parallels-desktop.brew.path": "/opt/homebrew/bin/brew",
     "parallels-desktop.prlctl.path": "/usr/local/bin/prlctl",
-    "parallels-desktop.git.path": "/usr/bin/git"
+    "parallels-desktop.git.path": "/usr/bin/git",
+    "git.autofetch": true
 }
