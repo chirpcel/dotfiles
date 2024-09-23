@@ -1,27 +1,36 @@
 #!/bin/zsh
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    echo "apply vscode macOS configuration"
+    echo "detected macOS"
+
+    echo "apply vscode configuration"
     ln -s ${PWD}/code/settings.json ./settings.json
 
-    echo "apply atuin macOS configuration"
+    echo "apply atuin configuration"
     ln -s ${PWD}/atuin ~/Library/Preferences/atuin
+
+    echo "apply alacritty configuration"
+    ln -s ${PWD}/alacritty ~/Library/Preferences/alacritty
+
+    echo "apply zsh configuration"
+    ln -s ${PWD}/zsh ~/Library/Preferences/zsh
+    echo "source ~/Library/Preferences/zsh/source.zsh" >> ~/.zshrc
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    echo "apply vscode linux configuration"
+    echo "detected linux"
+
+    echo "apply vscode configuration"
     mkdir -p ~/.config/code
     ln -s ${PWD}/code/settings.json ~/.config/code/settings.json
 
-    echo "apply atuin linux configuration"
+    echo "apply atuin configuration"
     ln -s ${PWD}/atuin ~/.config/atuin
+
+    echo "apply alacritty configuration"
+    ln -s ${PWD}/alacritty ~/.config/alacritty
+
+    echo "apply zsh configuration"
+    ln -s ${PWD}/zsh ~/.config/zsh
+    echo "source ~/.config/zsh/source.zsh" >> ~/.zshrc
 fi
-
-echo "apply alacritty configuration"
-mkdir -p ~/.config
-ln -s ${PWD}/alacritty ~/.config/alacritty
-
-echo "apply zsh configuration"
-mkdir -p ~/.config
-ln -s ${PWD}/zsh ~/.config/zsh
-echo "source ~/.config/zsh/zshrc" >> ~/.zshrc
 
 echo "apply docker configuration"
 ln -s ${PWD}/docker ~/.docker
