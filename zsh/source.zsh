@@ -7,6 +7,8 @@ export XDG_STATE_HOME=$HOME/Library/Saved\ Application\ State/
 # pfetch
 export PF_INFO="ascii os host kernel memory shell editor palette"
 export PF_COL2=9
+alias clear="clear && pfetch"
+clear
 
 # instant prompt
 export POWERLEVEL9K_INSTANT_PROMPT=quiet
@@ -18,6 +20,3 @@ dir_path=$(dirname "$0")
 for script in $(ls $dir_path/source.d/*.zsh | sort); do
   source $script
 done
-
-alias clear="clear && pfetch"
-clear
