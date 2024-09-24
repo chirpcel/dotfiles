@@ -1,6 +1,8 @@
 import = ["~/.config/alacritty/themes/themes/monokai_pro.toml"]
 
-shell = "/opt/homebrew/bin/tmux"
+[shell]
+program = "/opt/homebrew/bin/tmux"
+args = ["new","-A", "-s", "atty"]
 
 [window]
 padding = { x = 10, y = 10 }
