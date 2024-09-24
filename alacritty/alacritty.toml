@@ -1,5 +1,7 @@
 import = ["~/.config/alacritty/themes/themes/monokai_pro.toml"]
 
+shell = "/opt/homebrew/bin/tmux"
+
 [window]
 padding = { x = 10, y = 10 }
 dynamic_padding = true
