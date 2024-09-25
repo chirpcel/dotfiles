@@ -11,7 +11,9 @@ fi
 # pfetch
 export PF_INFO="ascii os host kernel memory shell editor palette"
 export PF_COL2=9
-alias clear="clear && pfetch"
+if [[ "$ATTY" == "true"* ]]; then
+  alias clear="clear && pfetch"
+fi
 clear
 
 # instant prompt
