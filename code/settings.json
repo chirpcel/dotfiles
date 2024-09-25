@@ -114,5 +114,8 @@
     "parallels-desktop.brew.path": "/opt/homebrew/bin/brew",
     "parallels-desktop.prlctl.path": "/usr/local/bin/prlctl",
     "parallels-desktop.git.path": "/usr/bin/git",
-    "git.autofetch": true
+    "git.autofetch": true,
+    "terminal.external.osxExec": "Alacritty.app",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "line"
 }
