@@ -34,7 +34,6 @@ zstyle ':completion:*' menu select
 
 # general
 export EDITOR=vim
-export PATH=$PATH:~/.bin
 
 # homebrew
 export HOMEBREW_NO_ENV_HINTS=1
