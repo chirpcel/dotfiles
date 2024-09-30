@@ -9,8 +9,12 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   export DOCKER_CONFIG=$HOME/.config/docker
 fi
 # pfetch
-export PF_INFO="ascii os host kernel memory shell editor palette"
-export PF_COL2=9
+export PF_INFO="ascii host cpu os kernel memory shell editor"
+export PF_COL1=3
+export PF_COL2=8
+export PF_PAD1=2
+export PF_PAD2=3
+export PF_PAD3=5
 if [[ "$ATTY" == "true"* ]]; then
   alias clear="clear && pfetch"
 fi
