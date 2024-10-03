@@ -21,6 +21,7 @@ alias espinit='cargo generate esp-rs/esp-idf-template cargo'
 alias espbuild='docker run -v ${PWD}:/project -w /project espressif/idf-rust:esp32_latest cargo build'
 alias libressl='/usr/bin/openssl'
 alias psc='docker run -it --rm rustscan/rustscan'
+alias keka="/Applications/Keka.app/Contents/MacOS/Keka --cli"
 
 # completions
 if type brew &>/dev/null
@@ -48,3 +49,6 @@ export JAVA_VERSION=21
 export BUN_INSTALL_BIN=~/Library/Application\ Support/bun/bin
 export BUN_INSTALL_GLOBAL_DIR=~/Library/Application\ Support/bun/install
 export BUN_INSTALL_CACHE_DIR=~/Library/Caches/bun/install
+
+# path
+export PATH="$HOME/Library/'Application Support'/bun/bin:$PATH"
