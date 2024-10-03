@@ -104,7 +104,6 @@
     "terminal.integrated.fontFamily": "MonaspiceKr NF",
     "editor.inlineSuggest.fontFamily": "MonaspiceKr NF",
     "debug.toolBarLocation": "commandCenter",
-    "workbench.experimental.share.enabled": true,
     "dev.containers.defaultExtensionsIfInstalledLocally": [
         "github.vscode-github-actions",
         "github.copilot",
@@ -134,5 +133,9 @@
     "git.autofetch": true,
     "terminal.external.osxExec": "Alacritty.app",
     "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.cursorStyle": "line"
+    "terminal.integrated.cursorStyle": "line",
+    "github.copilot.chat.search.semanticTextResults": true,
+    "github.copilot.chat.experimental.codeGeneration.useInstructionFiles": true,
+    "github.copilot.chat.experimental.inlineChatHint.enabled": true,
+    "chat.commandCenter.enabled": true
 }
