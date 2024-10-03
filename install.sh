@@ -27,3 +27,6 @@ ln -s ${PWD}/docker ${XDG_CONFIG_HOME}/docker
 
 echo "apply tmux configuration"
 ln -s ${PWD}/tmux ${XDG_CONFIG_HOME}/tmux
+
+echo "apply eza configuration"
+ln -s ${PWD}/eza ${XDG_CONFIG_HOME}/eza

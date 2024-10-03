@@ -52,3 +52,7 @@ export BUN_INSTALL_CACHE_DIR=~/Library/Caches/bun/install
 
 # path
 export PATH="$HOME/Library/'Application Support'/bun/bin:$PATH"
+
+# eza
+# TODO: check why theme.yml don't work
+export EZA_COLORS="di=33;1:fi=90:ln=35;3"

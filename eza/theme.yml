@@ -1,0 +1,10 @@
+filekinds:
+  normal:
+    foreground: Gray
+  directory:
+    foreground: Yellow
+  symlink:
+    foreground: Purple
+    is_italic: true
+  executable:
+    foreground: Green
