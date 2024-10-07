@@ -95,7 +95,15 @@
         "parallels-desktop.extension.path",
         "parallels-desktop.extension.start-machines-headless-by-default",
         "parallels-desktop.git.path",
-        "parallels-desktop.prlctl.path"
+        "parallels-desktop.prlctl.path",
+        "github.copilot.chat.experimental.codeGeneration.useInstructionFiles",
+        "github.copilot.chat.experimental.inlineChatHint.enabled",
+        "github.copilot.chat.search.semanticTextResults",
+        "chat.commandCenter.enabled",
+        "terminal.integrated.suggest.enabled",
+        "workbench.editor.defaultBinaryEditor",
+        "editor.experimentalEditContextEnabled",
+        "editor.experimentalInlineEdit.enabled"
     ],
     "editor.experimentalWhitespaceRendering": "font",
     "chat.editor.fontFamily": "MonaspiceRn NF",
@@ -137,5 +145,11 @@
     "github.copilot.chat.search.semanticTextResults": true,
     "github.copilot.chat.experimental.codeGeneration.useInstructionFiles": true,
     "github.copilot.chat.experimental.inlineChatHint.enabled": true,
-    "chat.commandCenter.enabled": true
+    "chat.commandCenter.enabled": true,
+    "remote.tunnels.alwaysUpdateCLI": true,
+    "workbench.editor.defaultBinaryEditor": "hexEditor.hexedit",
+    "http.electronFetch": true,
+    "editor.experimentalEditContextEnabled": true,
+    "editor.experimentalInlineEdit.enabled": true,
+    "editor.inlayHints.padding": true
 }
