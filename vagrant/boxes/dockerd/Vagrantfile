@@ -1,0 +1,18 @@
+Vagrant.configure("2") do |config|
+    config.vm.box = "bento/ubuntu-24.04"
+
+    config.vm.provider "parallels" do |vb|
+        vb.memory = "4096"
+        vb.cpus = 8
+        vb.name = "dockerd-box"
+    end
+
+    config.vm.provision "shell", inline: <<-SHELL
+        sudo snap install docker
+        sudo addgroup --system docker
+        sudo adduser ${USER} docker
+        newgrp docker
+        sudo snap disable docker
+        sudo snap enable docker
+    SHELL
+end
