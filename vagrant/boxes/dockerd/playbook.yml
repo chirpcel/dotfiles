@@ -30,3 +30,23 @@
 
     - name: Enable Docker snap
       command: snap enable docker
+
+    - name: Ensure .ssh directory exists
+      file:
+        path: /home/{{ ansible_user }}/.ssh
+        state: directory
+        mode: '0700'
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+
+    - name: Remove all existing keys from authorized_keys
+      lineinfile:
+        path: /home/{{ ansible_user }}/.ssh/authorized_keys
+        state: absent
+        regexp: '.*'
+
+    - name: Add SSH public key from host to authorized_keys
+      authorized_key:
+        user: "{{ ansible_user }}"
+        state: present
+        key: "{{ lookup('pipe', 'ssh-add -L | grep vagrant_auth') }}"
