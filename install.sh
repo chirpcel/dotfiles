@@ -30,3 +30,9 @@ ln -s ${PWD}/tmux ${XDG_CONFIG_HOME}/tmux
 
 echo "apply eza configuration"
 ln -s ${PWD}/eza ${XDG_CONFIG_HOME}/eza
+
+echo "apply xdg configuration"
+mkdir ~/Library/Scripts
+ln -s ${PWD}/launchd/LaunchAgents/net.mkersten.xdg.sh ~/Library/Scripts/net.mkersten.xdg.sh
+mkdir ~/Library/LaunchAgents
+ln -s ${PWD}/launchd/LaunchAgents/net.mkersten.xdg.plist ~/Library/LaunchAgents/net.mkersten.xdg.plist
