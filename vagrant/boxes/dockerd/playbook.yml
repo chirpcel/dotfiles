@@ -1,0 +1,32 @@
+---
+- name: Install Docker via Snap
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Ensure snapd is installed
+      apt:
+        name: snapd
+        state: present
+
+    - name: Install Docker
+      snap:
+        name: docker
+        state: present
+
+    - name: Create docker group
+      group:
+        name: docker
+        system: yes
+
+    - name: Add user to docker group
+      user:
+        name: "{{ ansible_user }}"
+        groups: docker
+        append: yes
+
+    - name: Disable Docker snap
+      command: snap disable docker
+
+    - name: Enable Docker snap
+      command: snap enable docker
