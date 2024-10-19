@@ -1,6 +1,6 @@
 {
 	"auths": {},
-	"currentContext": "dockerd",
+	"currentContext": "dockerd-box",
 	"cliPluginsExtraDirs": [
 		"/opt/homebrew/lib/docker/cli-plugins"
 	]

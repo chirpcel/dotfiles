@@ -1,0 +1,10 @@
+{
+    "Name": "dockerd-box",
+    "Metadata": {},
+    "Endpoints": {
+        "docker": {
+            "Host": "ssh://vagrant@dockerd-box",
+            "SkipTLSVerify": false
+        }
+    }
+}

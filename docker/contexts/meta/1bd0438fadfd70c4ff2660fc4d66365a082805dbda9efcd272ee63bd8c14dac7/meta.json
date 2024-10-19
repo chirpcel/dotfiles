@@ -1,1 +1,0 @@
-{"Name":"dockerd","Metadata":{},"Endpoints":{"docker":{"Host":"ssh://mkersten@dockerd","SkipTLSVerify":false}}}
