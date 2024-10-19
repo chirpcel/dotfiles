@@ -1,10 +1,11 @@
 Vagrant.configure("2") do |config|
     config.vm.box = "bento/ubuntu-24.04"
 
-    config.vm.provider "parallels" do |vb|
-        vb.memory = "4096"
-        vb.cpus = 8
-        vb.name = "dockerd-box"
+    config.vm.provider "parallels" do |prl|
+        prl.memory = "4096"
+        prl.cpus = 8
+        prl.name = "dockerd-box"
+        prl.update_guest_tools = true
     end
     
     config.vm.provision "ansible" do |ansible|
