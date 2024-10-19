@@ -39,12 +39,6 @@
         owner: "{{ ansible_user }}"
         group: "{{ ansible_user }}"
 
-    - name: Remove all existing keys from authorized_keys
-      lineinfile:
-        path: /home/{{ ansible_user }}/.ssh/authorized_keys
-        state: absent
-        regexp: '.*'
-
     - name: Add SSH public key from host to authorized_keys
       authorized_key:
         user: "{{ ansible_user }}"
