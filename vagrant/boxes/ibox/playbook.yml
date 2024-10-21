@@ -1,14 +1,14 @@
 ---
-- name: Setup iBox on CentOS Stream 9
+- name: Setup iBox on Debian 12
   hosts: all
   become: yes
 
   tasks:
     - name: Update all packages to the latest version
-      yum:
-        name: '*'
-        state: latest
-
+      apt:
+        update_cache: yes
+        upgrade: dist
+    
     - name: Ensure .ssh directory exists
       file:
         path: /home/{{ ansible_user }}/.ssh
@@ -29,31 +29,50 @@
         state: present
         key: "{{ lookup('pipe', 'ssh-add -L | grep vagrant_auth') }}"
 
-    - name: Install dnf-plugins-core
-      yum:
-        name: dnf-plugins-core
+    - name: Install UFW
+      apt:
+        name: ufw
         state: present
 
-    - name: Add HashiCorp repository
-      yum_repository:
-        name: hashicorp
-        description: HashiCorp
-        baseurl: https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
-        gpgcheck: yes
-        repo_gpgcheck: yes
-        enabled: yes
-        gpgkey: https://rpm.releases.hashicorp.com/gpg
+    - name: Allow SSH through UFW
+      ufw:
+        rule: allow
+        port: '22'
+        proto: tcp
+
+    - name: Enable UFW
+      ufw:
+        state: enabled
 
     - name: Install PostgreSQL
-      yum:
-        name: postgresql-server
+      apt:
+        name: postgresql
         state: present
-
-    - name: Initialize PostgreSQL database
-      command: postgresql-setup --initdb
 
     - name: Ensure PostgreSQL is enabled and started
       systemd:
         name: postgresql
         enabled: yes
         state: started
+
+    - name: Install ACL package
+      apt:
+        name: acl
+        state: present
+
+    - name: Set PostgreSQL password for the postgres user
+      become_user: postgres
+      shell: psql -c "ALTER USER postgres PASSWORD '{{ postgres_password }}';"
+
+    - name: Apply PostgreSQL configuration
+      copy:
+        src: ./postgresql.conf
+        dest: /etc/postgresql/15/main/conf.d/ibox.conf
+        owner: postgres
+        group: postgres
+        mode: '0644'
+
+    - name: Restart PostgreSQL to apply configuration changes
+      systemd:
+        name: postgresql
+        state: restarted
