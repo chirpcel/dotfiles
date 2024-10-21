@@ -1,0 +1,59 @@
+---
+- name: Setup iBox on CentOS Stream 9
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Update all packages to the latest version
+      yum:
+        name: '*'
+        state: latest
+
+    - name: Ensure .ssh directory exists
+      file:
+        path: /home/{{ ansible_user }}/.ssh
+        state: directory
+        mode: '0700'
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+
+    - name: Remove all existing keys from authorized_keys
+      lineinfile:
+        path: /home/{{ ansible_user }}/.ssh/authorized_keys
+        state: absent
+        regexp: '.*'
+
+    - name: Add SSH public key from host to authorized_keys
+      authorized_key:
+        user: "{{ ansible_user }}"
+        state: present
+        key: "{{ lookup('pipe', 'ssh-add -L | grep vagrant_auth') }}"
+
+    - name: Install dnf-plugins-core
+      yum:
+        name: dnf-plugins-core
+        state: present
+
+    - name: Add HashiCorp repository
+      yum_repository:
+        name: hashicorp
+        description: HashiCorp
+        baseurl: https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+        gpgcheck: yes
+        repo_gpgcheck: yes
+        enabled: yes
+        gpgkey: https://rpm.releases.hashicorp.com/gpg
+
+    - name: Install PostgreSQL
+      yum:
+        name: postgresql-server
+        state: present
+
+    - name: Initialize PostgreSQL database
+      command: postgresql-setup --initdb
+
+    - name: Ensure PostgreSQL is enabled and started
+      systemd:
+        name: postgresql
+        enabled: yes
+        state: started
