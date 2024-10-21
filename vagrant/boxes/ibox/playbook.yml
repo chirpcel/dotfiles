@@ -2,6 +2,8 @@
 - name: Setup iBox on Debian 12
   hosts: all
   become: yes
+  vars_files:
+      - secrets.yml
 
   tasks:
     - name: Update all packages to the latest version
