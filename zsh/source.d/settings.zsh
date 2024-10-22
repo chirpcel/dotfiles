@@ -48,6 +48,9 @@ export JAVA_VERSION=21
 # deno
 export DENO_INSTALL_ROOT=~/Library/Application\ Support/deno
 
+# path
+export PATH="/Users/mkersten/Library/Application Support/deno/bin:$PATH"
+
 # eza
 # TODO: check why theme.yml don't work
 export EZA_COLORS="di=33;1:fi=90:ln=35;3"
