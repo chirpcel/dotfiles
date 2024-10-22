@@ -47,6 +47,7 @@ export JAVA_VERSION=21
 
 # deno
 export DENO_INSTALL_ROOT=~/Library/Application\ Support/deno
+export DENO_TLS_CA_STORE="system"
 
 # path
 export PATH="/Users/mkersten/Library/Application Support/deno/bin:$PATH"
