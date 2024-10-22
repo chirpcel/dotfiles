@@ -37,3 +37,25 @@ or the `install.sh` script.
 - eza
 - gh (GitHub CLI)
 - pfetch-rs
+
+##### Features
+*Ask AI*
+
+With an installed Github cli and an active GitHub Copilot subscripion you ca ask question directly in terinal.
+
+General questions:
+```sh
+?? How can I find all files with the suffix .searched
+```
+Git related questions:
+```sh
+git? How can I list all my commits from yesterday
+```
+
+GitHub related questions:
+```sh
+gh? How can I create a new repository
+```
+
+GitHub Copilot will answer with the specific scope.
+
