@@ -45,13 +45,8 @@ export BAT_THEME="ansi"
 # java
 export JAVA_VERSION=21
 
-# bun
-export BUN_INSTALL_BIN=~/Library/Application\ Support/bun/bin
-export BUN_INSTALL_GLOBAL_DIR=~/Library/Application\ Support/bun/install
-export BUN_INSTALL_CACHE_DIR=~/Library/Caches/bun/install
-
-# path
-export PATH="$HOME/Library/'Application Support'/bun/bin:$PATH"
+# deno
+export DENO_INSTALL_ROOT=~/Library/Application\ Support/deno
 
 # eza
 # TODO: check why theme.yml don't work
