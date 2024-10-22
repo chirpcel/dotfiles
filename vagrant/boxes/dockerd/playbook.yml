@@ -1,35 +1,49 @@
 ---
-- name: Install Docker via Snap
+- name: Setup Docker
   hosts: all
   become: yes
 
   tasks:
-    - name: Ensure snapd is installed
-      apt:
-        name: snapd
+    - name: Update all packages to the latest version
+      ansible.builtin.apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: Install required packages
+      ansible.builtin.apt:
+        name:
+          - ca-certificates
+          - curl
         state: present
 
-    - name: Install Docker
-      snap:
-        name: docker
+    - name: Add Docker's official GPG key
+      ansible.builtin.apt_key:
+        url: https://download.docker.com/linux/debian/gpg
         state: present
 
-    - name: Create docker group
-      group:
+    - name: Set up the Docker repository
+      ansible.builtin.apt_repository:
+        repo: deb [arch=arm64] https://download.docker.com/linux/debian   bookworm stable
+        state: present
+
+    - name: Install Docker Engine
+      ansible.builtin.apt:
+        name:
+          - docker-ce
+          - containerd.io
+        state: latest
+
+    - name: Ensure Docker service is started
+      ansible.builtin.service:
         name: docker
-        system: yes
+        state: started
+        enabled: yes
 
     - name: Add user to docker group
-      user:
+      ansible.builtin.user:
         name: "{{ ansible_user }}"
         groups: docker
         append: yes
-
-    - name: Disable Docker snap
-      command: snap disable docker
-
-    - name: Enable Docker snap
-      command: snap enable docker
 
     - name: Ensure .ssh directory exists
       file:
