@@ -1,0 +1,100 @@
+---
+- name: Apply configurations based on OS type
+  hosts: localhost
+  tasks:
+    - name: Detect OS type
+      set_fact:
+        is_macos: "{{ ansible_facts['os_family'] == 'Darwin' }}"
+        is_linux: "{{ ansible_facts['os_family'] == 'Linux' }}"
+
+    - name: Set XDG_CONFIG_HOME for macOS
+      when: is_macos
+      set_fact:
+        xdg_config_home: "{{ lookup('env', 'HOME') }}/Library/Preferences/"
+
+    - name: Set XDG_CONFIG_HOME for Linux
+      when: is_linux
+      set_fact:
+        xdg_config_home: "{{ lookup('env', 'HOME') }}/.config/"
+
+    - name: Apply VSCode configuration for macOS
+      when: is_macos
+      file:
+        src: "{{ playbook_dir }}/code/settings.json"
+        dest: "./settings.json"
+        state: link
+
+    - name: Apply VSCode configuration for Linux
+      when: is_linux
+      file:
+        src: "{{ playbook_dir }}/code/settings.json"
+        dest: "{{ xdg_config_home }}/code/settings.json"
+        state: link
+
+    - name: Apply Atuin configuration
+      file:
+        src: "{{ playbook_dir }}/atuin"
+        dest: "{{ xdg_config_home }}/atuin"
+        state: link
+
+    - name: Apply Alacritty configuration
+      file:
+        src: "{{ playbook_dir }}/alacritty"
+        dest: "{{ xdg_config_home }}/alacritty"
+        state: link
+
+    - name: Apply Zsh configuration
+      file:
+        src: "{{ playbook_dir }}/zsh"
+        dest: "{{ xdg_config_home }}/zsh"
+        state: link
+
+    - name: Source Zsh configuration
+      lineinfile:
+        path: "{{ lookup('env', 'HOME') }}/.zshrc"
+        line: "source {{ xdg_config_home }}/zsh/source.zsh"
+        create: yes
+
+    - name: Apply Docker configuration
+      file:
+        src: "{{ playbook_dir }}/docker"
+        dest: "{{ xdg_config_home }}/docker"
+        state: link
+
+    - name: Apply Tmux configuration
+      file:
+        src: "{{ playbook_dir }}/tmux"
+        dest: "{{ xdg_config_home }}/tmux"
+        state: link
+
+    - name: Apply Eza configuration
+      file:
+        src: "{{ playbook_dir }}/eza"
+        dest: "{{ xdg_config_home }}/eza"
+        state: link
+
+    - name: Create Scripts directory for macOS
+      when: is_macos
+      file:
+        path: "{{ lookup('env', 'HOME') }}/Library/Scripts"
+        state: directory
+
+    - name: Apply XDG script for macOS
+      when: is_macos
+      file:
+        src: "{{ playbook_dir }}/launchd/LaunchAgents/net.mkersten.xdg.sh"
+        dest: "{{ lookup('env', 'HOME') }}/Library/Scripts/net.mkersten.xdg.sh"
+        state: link
+
+    - name: Create LaunchAgents directory for macOS
+      when: is_macos
+      file:
+        path: "{{ lookup('env', 'HOME') }}/Library/LaunchAgents"
+        state: directory
+
+    - name: Apply XDG plist for macOS
+      when: is_macos
+      file:
+        src: "{{ playbook_dir }}/launchd/LaunchAgents/net.mkersten.xdg.plist"
+        dest: "{{ lookup('env', 'HOME') }}/Library/LaunchAgents/net.mkersten.xdg.plist"
+        state: link
