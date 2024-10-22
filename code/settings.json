@@ -103,7 +103,8 @@
         "terminal.integrated.suggest.enabled",
         "workbench.editor.defaultBinaryEditor",
         "editor.experimentalEditContextEnabled",
-        "editor.experimentalInlineEdit.enabled"
+        "editor.experimentalInlineEdit.enabled",
+        "editor.inlayHints.padding"
     ],
     "editor.experimentalWhitespaceRendering": "font",
     "chat.editor.fontFamily": "MonaspiceRn NF",
@@ -151,5 +152,7 @@
     "http.electronFetch": true,
     "editor.experimentalEditContextEnabled": true,
     "editor.experimentalInlineEdit.enabled": true,
-    "editor.inlayHints.padding": true
+    "editor.inlayHints.padding": true,
+    "parallels-desktop.hashicorp.vagrant.path": "/usr/local/bin/vagrant",
+    "parallels-desktop.hashicorp.vagrant.parallels.plugin": true
 }
