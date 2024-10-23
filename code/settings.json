@@ -154,5 +154,8 @@
     "editor.experimentalInlineEdit.enabled": true,
     "editor.inlayHints.padding": true,
     "parallels-desktop.hashicorp.vagrant.path": "/usr/local/bin/vagrant",
-    "parallels-desktop.hashicorp.vagrant.parallels.plugin": true
+    "parallels-desktop.hashicorp.vagrant.parallels.plugin": true,
+    "workbench.preferredDarkColorTheme": "Monokai Pro",
+    "workbench.preferredLightColorTheme": "Monokai Pro Light",
+    "window.autoDetectColorScheme": true
 }
