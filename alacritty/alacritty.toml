@@ -1,8 +1,5 @@
+[general]
 import = ["~/.config/alacritty/themes/themes/monokai_pro.toml"]
-
-[shell]
-program = "/opt/homebrew/bin/tmux"
-args = ["new","-A", "-s", "atty"]
 
 [env]
 ATTY = "true"
@@ -23,3 +20,7 @@ style = { shape = "Beam", blinking = "on" }
 
 [terminal]
 osc52 = "CopyPaste"
+
+[terminal.shell]
+program = "/opt/homebrew/bin/tmux"
+args = ["new","-A", "-s", "atty"]
