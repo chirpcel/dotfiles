@@ -1,0 +1,22 @@
+---
+- name: Install PostgreSQL on Debian 12
+  hosts: all
+  become: true
+  vars_files:
+    - secrets.yml
+
+  tasks:
+    - name: Install PostgreSQL
+      ansible.builtin.apt:
+        name: postgresql
+        state: present
+
+    - name: Ensure PostgreSQL is running
+      ansible.builtin.service:
+        name: postgresql
+        state: started
+        enabled: true
+
+    - name: Set PostgreSQL password for the postgres user
+      become_user: postgres
+      shell: psql -c "ALTER USER postgres PASSWORD '{{ postgres_password }}';"

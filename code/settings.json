@@ -157,5 +157,6 @@
     "parallels-desktop.hashicorp.vagrant.parallels.plugin": true,
     "workbench.preferredDarkColorTheme": "Monokai Pro",
     "workbench.preferredLightColorTheme": "Monokai Pro Light",
-    "window.autoDetectColorScheme": true
+    "window.autoDetectColorScheme": true,
+    "ansible.playbook.arguments": "--ask-vault-pass"
 }

@@ -1,15 +1,17 @@
 ---
 - name: Setup iBox on Debian 12
   hosts: all
-  become: yes
-  vars_files:
-      - secrets.yml
+  become: true
 
   tasks:
     - name: Update all packages to the latest version
       apt:
-        update_cache: yes
+        update_cache: true
         upgrade: dist
+
+    - name: Install necessary packages
+      apt:
+        name: acl
     
     - name: Ensure .ssh directory exists
       file:
@@ -42,39 +44,27 @@
         port: '22'
         proto: tcp
 
+    - name: Allow HTTP through UFW
+      ufw:
+        rule: allow
+        port: '80'
+        proto: tcp
+
+    - name: Allow HTTPS through UFW 
+      ufw:
+        rule: allow
+        port: '443'
+        proto: tcp
+
     - name: Enable UFW
       ufw:
         state: enabled
 
-    - name: Install PostgreSQL
-      apt:
-        name: postgresql
-        state: present
+- name: Import nginx playbook
+  ansible.builtin.import_playbook: nginx.yml
 
-    - name: Ensure PostgreSQL is enabled and started
-      systemd:
-        name: postgresql
-        enabled: yes
-        state: started
+- name: Import Hashicorp Vault playbook
+  ansible.builtin.import_playbook: vault.yml
 
-    - name: Install ACL package
-      apt:
-        name: acl
-        state: present
-
-    - name: Set PostgreSQL password for the postgres user
-      become_user: postgres
-      shell: psql -c "ALTER USER postgres PASSWORD '{{ postgres_password }}';"
-
-    - name: Apply PostgreSQL configuration
-      copy:
-        src: ./postgresql.conf
-        dest: /etc/postgresql/15/main/conf.d/ibox.conf
-        owner: postgres
-        group: postgres
-        mode: '0644'
-
-    - name: Restart PostgreSQL to apply configuration changes
-      systemd:
-        name: postgresql
-        state: restarted
+- name: Import PostgreSQL playbook
+  ansible.builtin.import_playbook: postgres.yml
