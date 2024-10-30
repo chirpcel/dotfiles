@@ -152,5 +152,6 @@
     "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
     "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
     "window.systemColorTheme": "auto",
-    "workbench.preferredDarkColorTheme": "GitHub Dark"
+    "workbench.preferredDarkColorTheme": "GitHub Dark",
+    "workbench.iconTheme": "material-icon-theme"
 }
