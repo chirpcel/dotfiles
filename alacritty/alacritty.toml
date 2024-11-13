@@ -10,6 +10,7 @@ dynamic_padding = true
 decorations = "Full"
 decorations_theme_variant = "Dark"
 resize_increments = true
+option_as_alt = "OnlyLeft"
 
 [font]
 normal = { family = "MesloLGS NF", style = "Regular" }
