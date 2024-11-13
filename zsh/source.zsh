@@ -1,3 +1,5 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 export DOCKER_CONFIG=${XDG_CONFIG_HOME}/docker
 
 # pfetch
