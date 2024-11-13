@@ -22,5 +22,5 @@ style = { shape = "Beam", blinking = "on" }
 osc52 = "CopyPaste"
 
 [terminal.shell]
-program = "/opt/homebrew/bin/tmux"
-args = ["new","-A", "-s", "atty"]
+program = "/opt/homebrew/bin/zellij"
+args = ["attach","-c", "atty"]
