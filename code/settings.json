@@ -136,5 +136,10 @@
     "window.autoDetectColorScheme": true,
     "workbench.productIconTheme": "fluent-icons",
     "workbench.iconTheme": "Monokai Pro Icons",
-    "workbench.preferredDarkColorTheme": "Monokai Pro"
+    "workbench.preferredDarkColorTheme": "Monokai Pro",
+    "github.copilot.chat.terminalChatLocation": "terminal",
+    "github.copilot.chat.generateTests.codeLens": true,
+    "github.copilot.chat.inlineChatCompletionTrigger.enabled": true,
+    "github.copilot.chat.inlineChatHint.enabled": true,
+    "github.copilot.chat.temporalContext.enabled": true
 }
