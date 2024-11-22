@@ -6,13 +6,15 @@ zmodload zsh/system ||  return
 
 ## Set the transient prompt PROMPT here -
 TRANSIENT_PROMPT='$(starship module character)'   # Sample value
+PROMPT_BAK=$PROMPT  # Backup the original PROMPT
+RPROMPT_BAK=$RPROMPT  # Backup the original RPROMPT
 
 function set_prompt {
     ## Set the values of PROMPT and RPROMPT here
     # Sample values given below
-    PROMPT='$(starship prompt --terminal-width="$COLUMNS" --keymap="${KEYMAP:-}" --status="$STARSHIP_CMD_STATUS" --pipestatus="${STARSHIP_PIPE_STATUS[*]}" --cmd-duration="${STARSHIP_DURATION:-}" --jobs="$STARSHIP_JOBS_COUNT")'
-    RPROMPT='$(starship prompt --right --terminal-width="$COLUMNS" --keymap="${KEYMAP:-}" --status="$STARSHIP_CMD_STATUS" --pipestatus="${STARSHIP_PIPE_STATUS[*]}" --cmd-duration="${STARSHIP_DURATION:-}" --jobs="$STARSHIP_JOBS_COUNT")'
-}
+    PROMPT=$PROMPT_BAK
+    RPROMPT=$RPROMPT_BAK
+    }
 
 typeset -g _transient_prompt_newline=
 function _transient_prompt_set_prompt {
