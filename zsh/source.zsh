@@ -1,4 +1,5 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(starship init zsh)"
 
 export DOCKER_CONFIG=${XDG_CONFIG_HOME}/docker
 
@@ -13,12 +14,6 @@ if [[ "$ATTY" == "true"* ]]; then
   alias clear="clear && pfetch"
 fi
 clear
-
-# instant prompt
-export POWERLEVEL9K_INSTANT_PROMPT=quiet
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 dir_path=$(dirname "$0")
 for script in $(ls $dir_path/source.d/*.zsh | sort); do

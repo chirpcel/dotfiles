@@ -24,4 +24,3 @@ osc52 = "CopyPaste"
 
 [terminal.shell]
 program = "/opt/homebrew/bin/zellij"
-args = ["attach","-c", "atty"]

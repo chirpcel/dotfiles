@@ -1,0 +1,69 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](black)\
+$username\
+[](bg:green fg:black)\
+$directory\
+[](fg:green bg:black)\
+[](fg:black bg:green)\
+$git_branch\
+$git_status\
+[](fg:green bg:black)\
+[](fg:black bg:green)\
+$java\
+$nodejs\
+$rust\
+[](fg:green bg:black)\
+[](fg:black bg:green)\
+$docker_context\
+[ ](fg:green)\
+\n $character"""
+
+[username]
+show_always = true
+style_user = "bold bg:black"
+style_root = "bold bg:black"
+format = '[$user ]($style)'
+disabled = false
+
+[directory]
+style = "bold fg:black bg:green"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[docker_context]
+symbol = " "
+style = "bold fg:black bg:green"
+format = '[ $symbol $context ]($style)'
+
+[git_branch]
+symbol = ""
+style = "bold fg:black bg:green"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bold fg:black bg:green"
+format = '[$all_status$ahead_behind ]($style)'
+
+[java]
+symbol = " "
+style = "bold fg:black bg:green"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bold fg:black bg:green"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "bold fg:black bg:green"
+format = '[ $symbol ($version) ]($style)'
