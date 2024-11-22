@@ -34,7 +34,7 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 
 # general
-export EDITOR=vim
+export EDITOR=hx
 
 # homebrew
 export HOMEBREW_NO_ENV_HINTS=1
