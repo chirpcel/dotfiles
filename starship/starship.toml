@@ -1,7 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](black)\
+$os\
 $username\
 [](bg:green fg:black)\
 $directory\
@@ -18,12 +18,20 @@ $rust\
 [](fg:black bg:green)\
 $docker_context\
 [ ](fg:green)\
-\n $character"""
+\n$character"""
+
+[os]
+style = "bold fg:white bg:black"
+disabled = false
+[os.symbols]
+Macos = "󰀵 "
+Linux = "󰌽 "
+Windows = " "
 
 [username]
 show_always = true
-style_user = "bold bg:black"
-style_root = "bold bg:black"
+style_user = "bold fg:green bg:black"
+style_root = "bold fg:red bg:black"
 format = '[$user ]($style)'
 disabled = false
 
