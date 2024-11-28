@@ -22,10 +22,9 @@ or the `install.sh` script.
 
 ##### Required dependencies
 - alcritty
-- tmux
-- tpm
+- zellij
 - zsh
-- powerlevel10k
+- starship
 - zsh-autosuggestions
 - zsh-completions
 - zsh-history-substring-search
@@ -37,6 +36,7 @@ or the `install.sh` script.
 - eza
 - gh (GitHub CLI)
 - pfetch-rs
+- helix
 
 ##### Features
 *Ask AI*
