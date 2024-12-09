@@ -12,6 +12,9 @@ decorations_theme_variant = "Dark"
 resize_increments = true
 option_as_alt = "OnlyLeft"
 
+[scrolling]
+history = 0
+
 [font]
 normal = { family = "MesloLGS NF", style = "Regular" }
 size = 11.6
