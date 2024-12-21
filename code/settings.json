@@ -141,5 +141,17 @@
     "github.copilot.chat.generateTests.codeLens": true,
     "github.copilot.chat.inlineChatCompletionTrigger.enabled": true,
     "github.copilot.chat.inlineChatHint.enabled": true,
-    "github.copilot.chat.temporalContext.enabled": true
+    "github.copilot.chat.temporalContext.enabled": true,
+    "github.copilot.chat.commitMessageGeneration.instructions": [
+        {
+            "text": "Generate all commit messages using conventional commit",
+        },
+        {
+            "text": "Append to all commit messages a gitmoji",
+        },
+        {
+            "text": "Only one commit messsage per commit",
+        }
+    ],
+    "git.blame.editorDecoration.enabled": true
 }
