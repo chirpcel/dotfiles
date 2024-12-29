@@ -4,9 +4,9 @@ command -v bat > /dev/null && alias cat='bat --pager=never'
 command -v bat > /dev/null && alias catp='/bin/cat'
 command -v bat > /dev/null && alias less='bat'
 command -v op > /dev/null && alias op-compose='op run --env-file="./op.env" -- docker compose'
-command -v gh > /dev/null && noglob alias ??='gh copilot suggest -t shell' 
-command -v gh > /dev/null && noglob alias git?='gh copilot suggest -t git' 
-command -v gh > /dev/null && noglob alias gh?='gh copilot suggest -t gh' 
+command -v gh > /dev/null && noglob alias ??='gh copilot suggest -t shell'
+command -v gh > /dev/null && noglob alias git?='gh copilot suggest -t git'
+command -v gh > /dev/null && noglob alias gh?='gh copilot suggest -t gh'
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
@@ -22,6 +22,9 @@ alias espbuild='docker run -v ${PWD}:/project -w /project espressif/idf-rust:esp
 alias libressl='/usr/bin/openssl'
 alias psc='docker run -it --rm rustscan/rustscan'
 alias keka="/Applications/Keka.app/Contents/MacOS/Keka --cli"
+alias nerdctl="lima nerdctl"
+alias docker="nerdctl"
+alias cdsrc="cd ~/Developer/Sources/chirpcel"
 
 # completions
 if type brew &>/dev/null
@@ -49,8 +52,11 @@ export JAVA_VERSION=21
 export DENO_INSTALL_ROOT=~/Library/Application\ Support/deno
 export DENO_TLS_CA_STORE="system"
 
+# k8s
+export KUBECONFIG=~/Library/Preferences/kube/config
+
 # path
-export PATH="/Users/mkersten/Library/Application Support/deno/bin:/usr/local/bin:$PATH"
+export PATH="/opt/homebrew/opt/rustup/bin:/Users/mkersten/Library/Application Support/deno/bin:/usr/local/bin:$PATH"
 
 # eza
 # TODO: check why theme.yml don't work
