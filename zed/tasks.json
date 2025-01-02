@@ -1,0 +1,10 @@
+[
+  {
+    "label": "GitUI",
+    "command": "gitui",
+    "reveal": "always",
+    "reveal_target": "center",
+    "hide": "on_success",
+    "shell": "system"
+  }
+]

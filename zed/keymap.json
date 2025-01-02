@@ -1,0 +1,8 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-g": ["task::Spawn", { "task_name": "GitUI" }]
+    }
+  }
+]
