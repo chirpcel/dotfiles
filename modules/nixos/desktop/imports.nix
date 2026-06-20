@@ -7,6 +7,8 @@
     flatpak
     greeter
     keyboard
+    keyring
+    shell
     splash
     terminal
   ];
