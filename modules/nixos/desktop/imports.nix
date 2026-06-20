@@ -8,6 +8,7 @@
     dconf
     flatpak
     greeter
+    gtk
     keyboard
     keyring
     shell
