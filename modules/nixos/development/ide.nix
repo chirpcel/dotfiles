@@ -11,7 +11,13 @@
           ZED_FLATPAK_NO_ESCAPE = "1";
           FLATPAK_ENABLE_SDK_EXT = "rust-stable,node24";
         };
+        Context = {
+          filesystems = [
+            "xdg-config/zed:rw"
+          ];
+        };
       };
     };
+    stow.packages = [ "zed" ];
   };
 }
