@@ -18,6 +18,7 @@
           description = "Ironbar";
           partOf = [ "graphical-session.target" ];
           wantedBy = [ "graphical-session.target" ];
+          path = with pkgs; [ bash systemd upower gawk gnugrep iwd ];
           serviceConfig = {
             Type = "simple";
             ExecStart = "${pkgs.ironbar}/bin/ironbar";
