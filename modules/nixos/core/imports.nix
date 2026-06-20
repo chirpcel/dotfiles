@@ -6,6 +6,7 @@
     boot
     editor
     firmware
+    fonts
     locale
     network
     nh
