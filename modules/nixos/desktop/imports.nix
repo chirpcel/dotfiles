@@ -4,6 +4,8 @@
     audio
     browser
     compositor
+    dbus
+    dconf
     flatpak
     greeter
     keyboard
