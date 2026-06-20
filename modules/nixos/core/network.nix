@@ -9,6 +9,7 @@
         enable = true;
         useNetworkd = true;
       };
+      nftables.enable = true;
     };
   };
 }
