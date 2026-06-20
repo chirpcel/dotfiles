@@ -1,0 +1,3 @@
+[submodule "assets/secrets"]
+	path = assets/secrets
+	url = ssh://git@codeberg.org/chirpcel/secrets.git

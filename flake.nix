@@ -20,6 +20,14 @@
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak/?ref=latest";
     };
+    ragenix = {
+      url = "github:yaxitech/ragenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    agenix-rekey = {
+      url = "github:oddlama/agenix-rekey";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

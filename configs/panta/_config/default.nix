@@ -36,6 +36,10 @@
       "wheel"
       "seat"
     ];
-    hashedPassword = "$y$j9T$Z7laQaHw.bhKgsl22uvZe1$FZqppGT9tfKAldv759pi0FQ.EP5bvzsgy5GWc1dEUe.";
+    hashedPasswordFile = config.age.secrets.mkrstn-passwd.path;
   };
+
+  age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIClwAeCI0RDjkSKo8b+8umKHXzFPWNbwdGJEtSeuqNt/";
+  age.identityPaths = [ "/persistent/etc/ssh/ssh_host_key" ];
+  age.secrets.mkrstn-passwd.rekeyFile = ../../../assets/secrets/mkrstn-passwd.age;
 }

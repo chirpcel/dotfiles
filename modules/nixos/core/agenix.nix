@@ -1,0 +1,17 @@
+{ inputs, ... }:
+
+{
+  flake.nixosModules.agenix =
+  { config, ... }:
+  {
+    imports = [
+      inputs.ragenix.nixosModules.default
+      inputs.agenix-rekey.nixosModules.default
+    ];
+    age.rekey = {
+      masterIdentities = [ ../../../assets/secrets/identity.pub ];
+      storageMode = "local";
+      localStorageDir = ../../../assets/secrets/rekeyed/${config.networking.hostName};
+    };
+  };
+}
