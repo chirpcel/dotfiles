@@ -22,6 +22,8 @@
         ".var/app"
         ".config/dconf"
         ".local/share/keyrings"
+        ".gnupg"
+        ".ssh"
         "desktop"
         "documents"
         "downloads"

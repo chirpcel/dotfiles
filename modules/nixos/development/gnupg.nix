@@ -6,5 +6,6 @@
         enableSSHSupport = true;
       };
     };
+    stow.packages = [ "gnupg" ];
   };
 }
