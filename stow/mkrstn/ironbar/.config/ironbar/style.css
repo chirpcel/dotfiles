@@ -1,0 +1,137 @@
+@define-color base            #191724;
+@define-color surface         #1f1d2e;
+@define-color overlay         #26233a;
+
+@define-color muted           #6e6a86;
+@define-color subtle          #908caa;
+@define-color text            #e0def4;
+
+@define-color love            #eb6f92;
+@define-color gold            #f6c177;
+@define-color rose            #ebbcba;
+@define-color pine            #31748f;
+@define-color foam            #9ccfd8;
+@define-color iris            #c4a7e7;
+
+@define-color highlightLow    #21202e;
+@define-color highlightMed    #403d52;
+@define-color highlightHigh   #524f67;
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "MonaspiceKr Nerd Font Propo";
+    font-weight: bold;
+    font-size: 12px;
+    min-height: 0;
+}
+
+.background {
+    background-color: rgba(21, 18, 27, 0);
+    color: @text;
+}
+
+tooltip {
+    background-color: @base;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: @overlay;
+}
+
+#os-icon,
+#clock,
+#network,
+#bluetooth,
+#pulseaudio,
+#temperature,
+#memory,
+#battery,
+#tray,
+#notifications {
+    background-color: @base;
+    padding: 0px 10px;
+    border-left: 1px solid @overlay;
+    border-bottom: 1px solid @overlay;
+    border-right: 1px solid @overlay;
+}
+
+#os-icon {
+    color: @text;
+    border-radius: 0px 0px 10px 10px;
+    margin-left: 10px;
+    border-right: 0px;
+}
+
+#clock {
+    color: @gold;
+    border-radius: 0px 0px 10px 10px;
+    margin-left: 10px;
+    border-right: 0px;
+}
+
+#music {
+    min-width: 140px;
+    padding: 0 10px;
+    color: @foam;
+    background-color: transparent;
+    opacity: 0.9;
+    padding: 0px 10px;
+    margin: 3px 0px;
+    margin-top: 10px;
+}
+
+#network {
+    color: @love;
+    border-radius: 0px 0px 0px 10px;
+    border-right: 0px;
+}
+
+#bluetooth {
+    color: @gold;
+    border-radius: 0px 0px 0px 0px;
+}
+
+#pulseaudio {
+    color: @rose;
+    border-radius: 0 0px 10px 0;
+    margin-right: 10px;
+    border-left: 0px;
+}
+
+#pulseaudio.microphone {
+    color: #c4a7e7;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px 0px 10px 0px;
+    margin-right: 10px;
+}
+
+#temperature {
+    color: @foam;
+    border-radius: 0px 0px 0px 10px;
+    border-right: 0px;
+}
+
+#memory {
+    color: @foam;
+}
+
+#battery {
+    color: @iris;
+    border-radius: 0 0px 10px 0;
+    margin-right: 10px;
+    border-left: 0px;
+}
+
+#notifications {
+    border-radius: 0px 0px 10px 10px;
+    margin-right: 10px;
+    border-right: 0px;
+}
+
+.notifications .button {
+    background-color: @base;
+    min-width: 0;
+    padding: 0;
+}
