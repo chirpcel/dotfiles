@@ -18,7 +18,6 @@
     ];
     users.mkrstn = {
       directories = [
-        ".local/share/flatpak"
         ".var/app"
         ".config/dconf"
         ".local/share/keyrings"
