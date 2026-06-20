@@ -4,5 +4,6 @@
     git
     gnupg
     ide
+    vibe
   ];
 }
