@@ -1,3 +1,4 @@
+{inputs, ... }:
 {
   flake.nixosModules.shell =
     { pkgs, ... }:
@@ -55,11 +56,30 @@
             RestartSec = 2;
           };
         };
+        "stasis" = {
+          description = "Stasis Wayland Idle Manager";
+          partOf = [ "graphical-session.target" ];
+          wantedBy = [ "graphical-session.target" ];
+          path = with pkgs; [
+            systemd
+            brightnessctl
+            niri
+            inputs.ankylo.packages.${pkgs.system}.ankylo-lock
+          ];
+          serviceConfig = {
+            Type = "simple";
+            ExecStart = "${pkgs.stasis}/bin/stasis";
+            ExecReload = "${pkgs.stasis}/bin/stasis reload";
+            Restart = "on-failure";
+            RestartSec = 2;
+          };
+        };
       };
       stow.packages = [
         "wpaperd"
         "ironbar"
         "anyrun"
+        "stasis"
       ];
       environment.systemPackages = with pkgs; [
         swayosd

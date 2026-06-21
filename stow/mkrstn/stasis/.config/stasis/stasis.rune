@@ -1,0 +1,55 @@
+@author "chirpcel"
+@description "Lightweight feature packed idle manager for Wayland"
+reduce_brightness_after 120
+lock_after        300
+screen_off_after  360
+suspend_after     6000
+debounce_seconds  4
+notify_seconds    5
+default:
+  enable_loginctl true
+  enable_dbus_inhibit true
+  monitor_media true
+  ignore_remote_media true
+  debounce_seconds debounce_seconds
+  notify_on_unpause true
+  notify_before_action true
+  inhibit_apps [ ]
+  prepare_sleep_command "pidof ankylo-lock || ankylo-lock -f"
+  ac:
+    brightness:
+      timeout reduce_brightness_after
+      command "brightnessctl -s set 20"
+      resume_command "brightnessctl -r"
+    end
+    lock_screen:
+      timeout lock_after
+      command "ankylo-lock"
+    end
+    dpms:
+      timeout screen_off_after
+      command "niri msg action power-off-monitors"
+      resume_command "niri msg action power-on-monitors"
+    end
+  end
+  battery:
+    brightness:
+      timeout reduce_brightness_after
+      command "brightnessctl -s set 10"
+      resume_command "brightnessctl -r"
+    end
+    lock_screen:
+      timeout lock_after
+      command "ankylo-lock"
+    end
+    dpms:
+      timeout screen_off_after
+      command "niri msg action power-off-monitors"
+      resume_command "niri msg action power-on-monitors"
+    end
+    suspend:
+      timeout suspend_after
+      command "systemctl suspend"
+    end
+  end
+end
