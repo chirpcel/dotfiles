@@ -18,9 +18,9 @@ layout {
 
     border {
         width 1
-        active-color "#ffc87f"
-        inactive-color "#505050"
-        urgent-color "#9b0000"
+        active-color "#ebbcba"
+        inactive-color "#6e6a86"
+        urgent-color "#eb6f92"
     }
 }
 prefer-no-csd
