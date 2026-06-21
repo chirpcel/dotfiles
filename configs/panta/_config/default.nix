@@ -43,6 +43,7 @@
   age.identityPaths = [ "/persistent/etc/ssh/ssh_host_key" ];
   age.secrets.mkrstn-passwd.rekeyFile = ../../../assets/secrets/mkrstn-passwd.age;
   age.secrets.mistral-api-key.rekeyFile = ../../../assets/secrets/mistral-api-key.age;
+  age.secrets.nix-access-tokens.rekeyFile = ../../../assets/secrets/nix-access-tokens.age;
   age.secrets = {
     mistral-api-key = {
       path = "/home/mkrstn/.vibe/.env";
