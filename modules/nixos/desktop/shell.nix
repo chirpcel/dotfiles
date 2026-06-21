@@ -19,14 +19,7 @@
           description = "Ironbar";
           partOf = [ "graphical-session.target" ];
           wantedBy = [ "graphical-session.target" ];
-          path = with pkgs; [
-            bash
-            systemd
-            upower
-            gawk
-            gnugrep
-            iwd
-          ];
+          enableDefaultPath = false;
           serviceConfig = {
             Type = "simple";
             ExecStart = "${pkgs.ironbar}/bin/ironbar";
@@ -60,12 +53,7 @@
           description = "Stasis Wayland Idle Manager";
           partOf = [ "graphical-session.target" ];
           wantedBy = [ "graphical-session.target" ];
-          path = with pkgs; [
-            systemd
-            brightnessctl
-            niri
-            inputs.ankylo.packages.${pkgs.stdenv.hostPlatform.system}.ankylo-lock
-          ];
+          enableDefaultPath = false;
           serviceConfig = {
             Type = "simple";
             ExecStart = "${pkgs.stasis}/bin/stasis";
@@ -78,6 +66,7 @@
           description = "SwayNotificationCenter";
           partOf = [ "graphical-session.target" ];
           wantedBy = [ "graphical-session.target" ];
+          after = [ "graphical-session.target" ];
           serviceConfig = {
             Type = "simple";
             ExecStart = "${pkgs.swaynotificationcenter}/bin/swaync";
