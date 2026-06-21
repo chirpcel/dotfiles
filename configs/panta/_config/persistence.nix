@@ -15,6 +15,7 @@
       "/var/lib/upower"
       "/var/lib/iwd"
       "/var/lib/flatpak"
+      "/var/lib/fprint"
     ];
     users.mkrstn = {
       directories = [
@@ -24,6 +25,7 @@
         ".config/gtk-4.0"
         ".local/share/keyrings"
         ".local/share/fish"
+        ".local/share/direnv"
         ".gnupg"
         ".ssh"
         "desktop"

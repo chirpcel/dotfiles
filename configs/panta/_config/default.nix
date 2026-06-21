@@ -8,6 +8,8 @@
 {
   imports = [
     ./persistence.nix
+    ./secure-boot.nix
+    ./lid-support.nix
   ];
 
   system.stateVersion = "26.05";
@@ -45,6 +47,7 @@
   age.secrets.mkrstn-passwd.rekeyFile = ../../../assets/secrets/mkrstn-passwd.age;
   age.secrets.mistral-api-key.rekeyFile = ../../../assets/secrets/mistral-api-key.age;
   age.secrets.nix-access-tokens.rekeyFile = ../../../assets/secrets/nix-access-tokens.age;
+  age.secrets.usbguard-rules.rekeyFile = ../../../assets/secrets/panta-usbguard-rules.age;
   age.secrets = {
     mistral-api-key = {
       path = "/home/mkrstn/.vibe/.env";

@@ -2,7 +2,7 @@
 
 {
   flake.nixosModules.ankylo =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
     {
       imports = [
         inputs.ankylo.nixosModules.ankylo
@@ -12,7 +12,13 @@
         inputs.ankylo.packages.${pkgs.stdenv.hostPlatform.system}.ankylo-lock;
       programs.ankylo.pinentry.package =
         inputs.ankylo.packages.${pkgs.stdenv.hostPlatform.system}.ankylo-pinentry;
-      programs.ankylo.polkit.package =
-        inputs.ankylo.packages.${pkgs.stdenv.hostPlatform.system}.ankylo-polkit;
+      security.pam.services = {
+        ankylo-lock.u2fAuth = true;
+        ankylo-lock.fprintAuth = true;
+      };
+      security.pam.services.sudo.rules.auth.fprintd.order =
+        config.security.pam.services.sudo.rules.auth.u2f.order - 10;
+      security.pam.services.ankylo-lock.rules.auth.fprintd.order =
+        config.security.pam.services.ankylo-lock.rules.auth.u2f.order - 10;
     };
 }
