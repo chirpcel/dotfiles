@@ -19,6 +19,8 @@
       security.pam.services = {
         login.u2fAuth = false;
         login.fprintAuth = false;
+        greetd.u2fAuth = false;
+        greetd.fprintAuth = false;
         su.u2fAuth = false;
       };
       services.usbguard = {
