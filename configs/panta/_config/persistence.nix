@@ -20,6 +20,8 @@
       directories = [
         ".var/app"
         ".config/dconf"
+        ".config/gtk-3.0"
+        ".config/gtk-4.0"
         ".local/share/keyrings"
         ".gnupg"
         ".ssh"
