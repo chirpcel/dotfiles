@@ -13,8 +13,8 @@
     nh
     nix
     security
+    shell
     ssh
     stow
-    tty
   ];
 }
