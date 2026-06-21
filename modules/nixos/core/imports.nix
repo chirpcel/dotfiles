@@ -4,6 +4,7 @@
     inputs.disko.nixosModules.disko
     agenix
     boot
+    comma
     editor
     firmware
     fonts
