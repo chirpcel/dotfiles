@@ -38,4 +38,12 @@
     "light": "One Light",
     "dark": "Rosé Pine",
   },
+  "terminal": {
+    "shell": {
+      "with_arguments": {
+        "program": "/app/bin/host-spawn",
+        "args": ["sh", "-c", "exec $(getent passwd $USER | cut -d: -f7)"],
+      },
+    },
+  },
 }
