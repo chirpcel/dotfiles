@@ -1,8 +1,13 @@
 { inputs, ... }:
 
 {
-  flake.nixosModules.compositor = {
+  flake.nixosModules.compositor =
+  { pkgs, ... }:
+  {
     programs.niri.enable = true;
+    environment.systemPackages = with pkgs; [
+      xwayland-satellite
+    ];
     stow.packages = [ "niri" ];
   };
 }
