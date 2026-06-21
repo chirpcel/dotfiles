@@ -74,12 +74,24 @@
             RestartSec = 2;
           };
         };
+        "swaync" = {
+          description = "SwayNotificationCenter";
+          partOf = [ "graphical-session.target" ];
+          wantedBy = [ "graphical-session.target" ];
+          serviceConfig = {
+            Type = "simple";
+            ExecStart = "${pkgs.swaynotificationcenter}/bin/swaync";
+            Restart = "on-failure";
+            RestartSec = 2;
+          };
+        };
       };
       stow.packages = [
         "wpaperd"
         "ironbar"
         "anyrun"
         "stasis"
+        "swaync"
       ];
       environment.systemPackages = with pkgs; [
         swayosd
