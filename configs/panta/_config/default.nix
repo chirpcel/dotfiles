@@ -37,6 +37,7 @@
       "seat"
     ];
     hashedPasswordFile = config.age.secrets.mkrstn-passwd.path;
+    useDefaultShell = true;
   };
 
   age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIClwAeCI0RDjkSKo8b+8umKHXzFPWNbwdGJEtSeuqNt/";

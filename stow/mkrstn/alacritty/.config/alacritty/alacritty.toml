@@ -1,2 +1,6 @@
 [general]
 import = ["theme.toml"]
+live_config_reload = true
+
+[window]
+padding = { x = 10, y = 5 }

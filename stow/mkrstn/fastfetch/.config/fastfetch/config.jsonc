@@ -1,0 +1,56 @@
+{
+  "logo": {
+    "type": "small",
+    "padding": {
+      "right": 1,
+    },
+  },
+  "display": {
+    "separator": " ",
+  },
+  "modules": [
+    {
+      "key": "╭────╮",
+      "type": "custom",
+    },
+    {
+      "key": "│ 󰇅  │",
+      "type": "title",
+      "format": "{host-name}",
+    },
+    {
+      "key": "│   │",
+      "type": "kernel",
+    },
+    {
+      "key": "│   │",
+      "type": "terminal",
+    },
+    {
+      "key": "│   │",
+      "type": "shell",
+    },
+    {
+      "key": "│ 󰉉  │",
+      "type": "disk",
+      "folders": "/persistent",
+    },
+    {
+      "key": "│   │",
+      "type": "memory",
+    },
+    {
+      "key": "╰────╯",
+      "type": "custom",
+    },
+    {
+      "key": "      ",
+      "type": "colors",
+      "symbol": "circle",
+    },
+    {
+      "key": " ",
+      "type": "custom",
+    },
+  ],
+}

@@ -14,5 +14,6 @@
     security
     ssh
     stow
+    tty
   ];
 }
