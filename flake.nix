@@ -28,6 +28,10 @@
       url = "github:oddlama/agenix-rekey";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ankylo = {
+      url = "path:/home/mkrstn/documents/repositories/ankylo";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

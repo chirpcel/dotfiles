@@ -1,0 +1,10 @@
+Config (
+  x: Fraction(0.5),
+  y: Fraction(0.3),
+  close_on_click: false,
+  plugins: [
+    "/var/lib/anyrun/plugins/libapplications.so",
+    "/var/lib/anyrun/plugins/libniri_focus.so",
+    "/var/lib/anyrun/plugins/libsymbols.so",
+  ],
+)

@@ -1,6 +1,7 @@
 { config, ... }:
 {
   flake.nixosModules.desktop.imports = with config.flake.nixosModules; [
+    ankylo
     audio
     browser
     compositor
