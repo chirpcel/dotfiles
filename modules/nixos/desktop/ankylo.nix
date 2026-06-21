@@ -8,8 +8,11 @@
         inputs.ankylo.nixosModules.ankylo
       ];
       programs.ankylo.enable = true;
-      programs.ankylo.lock.package = inputs.ankylo.packages.${pkgs.system}.ankylo-lock;
-      programs.ankylo.pinentry.package = inputs.ankylo.packages.${pkgs.system}.ankylo-pinentry;
-      programs.ankylo.polkit.package = inputs.ankylo.packages.${pkgs.system}.ankylo-polkit;
+      programs.ankylo.lock.package =
+        inputs.ankylo.packages.${pkgs.stdenv.hostPlatform.system}.ankylo-lock;
+      programs.ankylo.pinentry.package =
+        inputs.ankylo.packages.${pkgs.stdenv.hostPlatform.system}.ankylo-pinentry;
+      programs.ankylo.polkit.package =
+        inputs.ankylo.packages.${pkgs.stdenv.hostPlatform.system}.ankylo-polkit;
     };
 }

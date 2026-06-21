@@ -1,4 +1,4 @@
-{inputs, ... }:
+{ inputs, ... }:
 {
   flake.nixosModules.shell =
     { pkgs, ... }:
@@ -64,7 +64,7 @@
             systemd
             brightnessctl
             niri
-            inputs.ankylo.packages.${pkgs.system}.ankylo-lock
+            inputs.ankylo.packages.${pkgs.stdenv.hostPlatform.system}.ankylo-lock
           ];
           serviceConfig = {
             Type = "simple";
