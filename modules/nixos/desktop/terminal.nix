@@ -3,8 +3,8 @@
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [
-        alacritty
+        ghostty
       ];
-      stow.packages = [ "alacritty" ];
+      stow.packages = [ "ghostty" ];
     };
 }

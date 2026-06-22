@@ -35,7 +35,7 @@ window-rule {
 }
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
-    Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
+    Mod+T hotkey-overlay-title="Open a Terminal: Ghostty" { spawn "ghostty"; }
     Mod+B hotkey-overlay-title="Run an Application: Brave" { spawn "flatpak" "run" "com.brave.Browser"; }
     Mod+Z hotkey-overlay-title="Run an Application: Zed" { spawn "flatpak" "run" "dev.zed.Zed"; }
     Mod+Space hotkey-overlay-title="Run an Application: Anyrun" { spawn "anyrun"; }
