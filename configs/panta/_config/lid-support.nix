@@ -27,7 +27,7 @@
       ${coreutils}/bin/sleep 5
 
       # Prüfe, ob USBGuard läuft
-      if ! ${coreutils}/bin/pgrep -x "usbguard-daemon" > /dev/null; then
+      if ! ${procps}/bin/pgrep -x "usbguard-daemon" > /dev/null; then
         echo "USBGuard ist nicht bereit. Warte weitere 5 Sekunden..."
         ${coreutils}/bin/sleep 5
       fi
