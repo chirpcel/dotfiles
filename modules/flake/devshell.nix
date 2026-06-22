@@ -8,15 +8,15 @@
     devshells.default = {
       commands = [
         {
-          name = "boot";
+          name = "nboot";
           command = "nh os boot .?submodules=1";
         }
         {
-          name = "switch";
+          name = "nswitch";
           command = "nh os switch .?submodules=1";
         }
         {
-          name = "rekey";
+          name = "nrekey";
           command = "agenix --extra-flake-params '?submodules=1' rekey";
         }
       ];
