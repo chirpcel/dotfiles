@@ -1,6 +1,6 @@
 {
   flake.nixosModules.nix =
-    { config, ... }:
+    { config, lib, ... }:
     {
       nix.settings.experimental-features = [
         "nix-command"
@@ -13,5 +13,11 @@
         mode = "770";
         group = "users";
       };
+      nixpkgs.config.allowUnfreePredicate =
+        pkg:
+        builtins.elem (lib.getName pkg) [
+          "textual-speedups"
+          "proton-pass-cli"
+        ];
     };
 }

@@ -12,6 +12,7 @@
     network
     nh
     nix
+    proton
     security
     shell
     ssh
