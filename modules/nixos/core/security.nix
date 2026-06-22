@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.nixosModules.security =
+  flake.nixosModules.core-security =
     { config, ... }:
     {
       imports = [
@@ -19,9 +19,15 @@
       security.pam.services = {
         login.u2fAuth = false;
         login.fprintAuth = false;
-        greetd.u2fAuth = false;
-        greetd.fprintAuth = false;
         su.u2fAuth = false;
+        su.fprintAuth = false;
+      };
+      security.pam.u2f = {
+        enable = true;
+        settings = {
+          cue = true;
+          authfile = config.age.secrets.u2f-authfile.path;
+        };
       };
       services.usbguard = {
         enable = true;

@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.shell =
+  flake.nixosModules.core-shell =
     { pkgs, ... }:
     {
       programs.fish = {

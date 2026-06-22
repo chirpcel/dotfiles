@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.editor =
+  flake.nixosModules.core-editor =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [

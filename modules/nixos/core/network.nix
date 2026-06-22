@@ -1,14 +1,7 @@
 {
-  flake.nixosModules.network = {
-    systemd.network = {
-      enable = true;
-    };
+  flake.nixosModules.core-network = {
     networking = {
-      useNetworkd = true;
-      wireguard = {
-        enable = true;
-        useNetworkd = true;
-      };
+      networkmanager.enable = true;
       nftables.enable = true;
     };
   };

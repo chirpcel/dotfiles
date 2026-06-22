@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.agent =
+  flake.nixosModules.development-agent =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [

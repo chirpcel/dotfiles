@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.geforce-now = {
+  flake.nixosModules.gaming-geforce-now = {
     services.flatpak = {
       remotes = [
         {

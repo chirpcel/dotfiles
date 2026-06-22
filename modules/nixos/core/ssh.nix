@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.ssh = {
+  flake.nixosModules.core-ssh = {
     services.openssh = {
       enable = true;
       startWhenNeeded = true;

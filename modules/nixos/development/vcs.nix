@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.vcs = {
+  flake.nixosModules.development-vcs = {
     programs.git = {
       enable = true;
     };

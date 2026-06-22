@@ -1,15 +1,13 @@
 {
-  flake.nixosModules.gtk =
+  flake.nixosModules.desktop-gtk =
     { pkgs, ... }:
     {
       environment = {
         systemPackages = with pkgs; [
           adw-gtk3
-          adwaita-icon-theme
           bibata-cursors
         ];
       };
-      environment.variables.XCURSOR_THEME = "Bibata-Modern-Ice";
       programs.dconf = {
         profiles.user = {
           databases = [
@@ -25,6 +23,5 @@
           ];
         };
       };
-      stow.packages = [ "gtk" ];
     };
 }

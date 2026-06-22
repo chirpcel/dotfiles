@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.terminal =
+  flake.nixosModules.desktop-terminal =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [

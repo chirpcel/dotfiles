@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.stow =
+  flake.nixosModules.core-stow =
     {
       lib,
       config,
