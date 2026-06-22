@@ -21,8 +21,6 @@
       directories = [
         ".var/app"
         ".config/dconf"
-        ".config/gtk-3.0"
-        ".config/gtk-4.0"
         ".local/share/keyrings"
         ".local/share/fish"
         ".local/share/direnv"
