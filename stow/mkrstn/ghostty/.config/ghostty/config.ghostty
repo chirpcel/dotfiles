@@ -1,2 +1,1 @@
-theme = "Rose Pine"
-font-family = "MonaspiceKr Nerd Font Propo"
+theme = light:Adwaita,dark:Adwaita Dark

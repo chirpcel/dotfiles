@@ -1,20 +1,35 @@
 { config, ... }:
 {
-  flake.nixosModules.desktop = {
-    imports = with config.flake.nixosModules; [
-      desktop-browser
-      desktop-flatpak
-      desktop-gtk
-      desktop-keyboard
-      desktop-splash
-      desktop-terminal
-    ];
-    services = {
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
-      gnome = {
-        core-apps.enable = false;
+  flake.nixosModules.desktop =
+    { pkgs, ... }:
+    {
+      imports = with config.flake.nixosModules; [
+        desktop-browser
+        desktop-flatpak
+        desktop-gtk
+        desktop-keyboard
+        desktop-proton
+        desktop-security
+        desktop-splash
+        desktop-terminal
+      ];
+      services = {
+        displayManager.gdm.enable = true;
+        desktopManager.gnome = {
+          enable = true;
+          sessionPath = with pkgs; [
+            gnomeExtensions.dash-to-dock
+            gnomeExtensions.blur-my-shell
+          ];
+        };
+        gnome = {
+          core-apps.enable = false;
+          gnome-software.enable = true;
+        };
+      };
+      environment = {
+        systemPackages = with pkgs; [ nautilus ];
+        gnome.excludePackages = with pkgs; [ gnome-tour ];
       };
     };
-  };
 }

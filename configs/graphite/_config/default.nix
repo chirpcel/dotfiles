@@ -13,7 +13,7 @@
   ];
 
   system.stateVersion = "26.05";
-  networking.hostName = "panta";
+  networking.hostName = "graphite";
 
   stow.location = "/home/mkrstn/documents/repositories/dotfiles/stow";
 
@@ -22,12 +22,12 @@
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   environment.etc."issue".text = ''
-    ██████╗  █████╗ ███╗   ██╗████████╗ █████╗
-    ██╔══██╗██╔══██╗████╗  ██║╚══██╔══╝██╔══██╗
-    ██████╔╝███████║██╔██╗ ██║   ██║   ███████║
-    ██╔═══╝ ██╔══██║██║╚██╗██║   ██║   ██╔══██║
-    ██║     ██║  ██║██║ ╚████║   ██║   ██║  ██║
-    ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝
+     ██████╗ ██████╗  █████╗ ██████╗ ██╗  ██╗██╗████████╗███████╗
+    ██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██║  ██║██║╚══██╔══╝██╔════╝
+    ██║  ███╗██████╔╝███████║██████╔╝███████║██║   ██║   █████╗
+    ██║   ██║██╔══██╗██╔══██║██╔═══╝ ██╔══██║██║   ██║   ██╔══╝
+    ╚██████╔╝██║  ██║██║  ██║██║     ██║  ██║██║   ██║   ███████╗
+     ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝╚═╝   ╚═╝   ╚══════╝
   '';
 
   users.users."mkrstn" = {
@@ -47,7 +47,7 @@
   age.secrets.mkrstn-passwd.rekeyFile = ../../../assets/secrets/mkrstn-passwd.age;
   age.secrets.mistral-api-key.rekeyFile = ../../../assets/secrets/mistral-api-key.age;
   age.secrets.nix-access-tokens.rekeyFile = ../../../assets/secrets/nix-access-tokens.age;
-  age.secrets.usbguard-rules.rekeyFile = ../../../assets/secrets/panta-usbguard-rules.age;
+  age.secrets.usbguard-rules.rekeyFile = ../../../assets/secrets/graphite-usbguard-rules.age;
   age.secrets.u2f-authfile.rekeyFile = ../../../assets/secrets/u2f-authfile.age;
   age.secrets = {
     mistral-api-key = {

@@ -2,9 +2,11 @@
   flake.nixosModules.core-editor =
     { pkgs, ... }:
     {
-      environment.systemPackages = with pkgs; [
-        helix
-      ];
-      environment.variables.EDITOR = "hx";
+      programs.neovim = {
+        enable = true;
+        defaultEditor = true;
+        vimAlias = true;
+        viAlias = true;
+      };
     };
 }

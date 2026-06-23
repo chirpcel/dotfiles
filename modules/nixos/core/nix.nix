@@ -19,5 +19,6 @@
           "textual-speedups"
           "proton-pass-cli"
         ];
+      documentation.enable = false;
     };
 }

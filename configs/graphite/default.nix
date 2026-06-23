@@ -7,7 +7,7 @@
 }:
 
 {
-  flake.nixosConfigurations.panta = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.graphite = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     modules = [
       config.flake.nixosModules.core

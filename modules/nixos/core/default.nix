@@ -16,5 +16,6 @@
     core-shell
     core-ssh
     core-stow
+    core-xdg
   ];
 }

@@ -31,7 +31,6 @@
       };
       services.usbguard = {
         enable = true;
-        dbus.enable = true;
         ruleFile = config.age.secrets.usbguard-rules.path;
         IPCAllowedGroups = [ "wheel" ];
         presentDevicePolicy = "apply-policy";
