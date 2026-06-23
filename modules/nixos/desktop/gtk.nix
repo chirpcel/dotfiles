@@ -4,8 +4,8 @@
     {
       environment = {
         systemPackages = with pkgs; [
-          adw-gtk3
           bibata-cursors
+          morewaita-icon-theme
         ];
       };
       programs.dconf = {
@@ -14,14 +14,18 @@
             {
               settings = {
                 "org/gnome/desktop/interface" = {
-                  color-scheme = "prefer-dark";
-                  gtk-theme = "adw-gtk3-dark";
+                  gtk-theme = "adw-gtk3";
                   cursor-theme = "Bibata-Modern-Ice";
+                  icon-theme = "MoreWaita";
                 };
               };
             }
           ];
         };
       };
+      services.flatpak.packages = [
+        "org.gtk.Gtk3theme.adw-gtk3"
+        "org.gtk.Gtk3theme.adw-gtk3-dark"
+      ];
     };
 }

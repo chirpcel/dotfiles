@@ -13,9 +13,9 @@
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
       "/var/lib/upower"
-      "/var/lib/iwd"
       "/var/lib/flatpak"
       "/var/lib/fprint"
+      "/etc/NetworkManager/system-connections"
     ];
     users.mkrstn = {
       directories = [

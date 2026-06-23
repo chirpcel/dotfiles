@@ -19,9 +19,10 @@
     sb-pk-pem.path = "/var/lib/sbctl/keys/PK/PK.pem";
   };
 
-  #boot.loader.systemd-boot.enable = lib.mkForce false;
-  #boot.lanzaboote = {
-  #  enable = true;
-  #  pkiBundle = "/var/lib/sbctl";
-  #};
+  boot.loader.systemd-boot.enable = lib.mkForce false;
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/var/lib/sbctl";
+    logLevel = "debug";
+  };
 }

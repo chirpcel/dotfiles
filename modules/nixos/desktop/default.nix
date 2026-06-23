@@ -18,8 +18,10 @@
         desktopManager.gnome = {
           enable = true;
           sessionPath = with pkgs; [
-            gnomeExtensions.dash-to-dock
             gnomeExtensions.blur-my-shell
+            gnomeExtensions.paperwm
+            gnomeExtensions.dash-to-dock
+            gnomeExtensions.clipboard-indicator
           ];
         };
         gnome = {

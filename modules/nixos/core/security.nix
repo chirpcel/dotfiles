@@ -11,7 +11,6 @@
         sudo.enable = false;
         polkit.enable = true;
         run0.enable = true;
-        run0.enableSudoAlias = true;
       };
       services.pcscd = {
         enable = true;
@@ -31,12 +30,7 @@
       };
       services.usbguard = {
         enable = true;
-        ruleFile = config.age.secrets.usbguard-rules.path;
         IPCAllowedGroups = [ "wheel" ];
-        presentDevicePolicy = "apply-policy";
-        presentControllerPolicy = "apply-policy";
-        insertedDevicePolicy = "apply-policy";
-        implicitPolicyTarget = "block";
       };
     };
 }

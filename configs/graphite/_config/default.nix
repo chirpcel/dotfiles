@@ -9,7 +9,6 @@
   imports = [
     ./persistence.nix
     ./secure-boot.nix
-    ./lid-support.nix
   ];
 
   system.stateVersion = "26.05";

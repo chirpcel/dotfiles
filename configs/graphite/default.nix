@@ -16,6 +16,9 @@
       config.flake.nixosModules.impermanence
       config.flake.nixosModules.development
       config.flake.nixosModules.gaming
+      config.flake.nixosModules.udev-keychron-m6-8k
+      config.flake.nixosModules.udev-keychron-q1-max
+      config.flake.nixosModules.udev-fractal-design-scape
       ./_config
     ];
   };
