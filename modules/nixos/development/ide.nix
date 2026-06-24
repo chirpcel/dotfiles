@@ -4,6 +4,9 @@
       packages = [
         "org.gnome.Builder"
       ];
+      overrides."org.gnome.Builder".Context = {
+        devices = [ "all" ];
+      };
     };
   };
 }

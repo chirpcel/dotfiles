@@ -6,6 +6,9 @@
         packages = [
           "app.devsuite.Ptyxis"
         ];
+        overrides."app.devsuite.Ptyxis".Context = {
+          devices = [ "all" ];
+        };
       };
     };
 }

@@ -4,6 +4,6 @@
       "com.github.marhkb.Pods"
       "org.gnome.Boxes"
     ];
-    #virtualisation.podman.enable = true;
+    virtualisation.podman.enable = true;
   };
 }
