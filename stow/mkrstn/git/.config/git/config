@@ -4,7 +4,7 @@
         defaultBranch = "main"
 [signing]
         format = "openpgp"
-        key = "51CA47CD23C74F9D"
 [user]
         email = "git@m.krstn.io"
         name = "chirpcel"
+        signingkey = "51CA47CD23C74F9D"

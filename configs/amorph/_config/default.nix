@@ -1,0 +1,16 @@
+{ lib, ... }:
+{
+  environment.etc."issue".text = ''
+     █████╗ ███╗   ███╗ ██████╗ ██████╗ ██████╗ ██╗  ██╗
+    ██╔══██╗████╗ ████║██╔═══██╗██╔══██╗██╔══██╗██║  ██║
+    ███████║██╔████╔██║██║   ██║██████╔╝██████╔╝███████║
+    ██╔══██║██║╚██╔╝██║██║   ██║██╔══██╗██╔═══╝ ██╔══██║
+    ██║  ██║██║ ╚═╝ ██║╚██████╔╝██║  ██║██║     ██║  ██║
+    ╚═╝  ╚═╝╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝
+  '';
+  networking.hostName = "amorph";
+  system.stateVersion = "26.05";
+  boot.zfs.forceImportRoot = false;
+  boot.supportedFilesystems.zfs = lib.mkForce false;
+  age.secrets.nix-access-tokens.rekeyFile = ../../../assets/secrets/nix-access-tokens.age;
+}

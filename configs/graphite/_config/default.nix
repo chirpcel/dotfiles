@@ -14,6 +14,7 @@
   system.stateVersion = "26.05";
   networking.hostName = "graphite";
 
+  stow.enable = true;
   stow.location = "/home/mkrstn/documents/repositories/dotfiles/stow";
 
   hardware.cpu.intel.npu.enable = true;
@@ -59,4 +60,6 @@
   systemd.tmpfiles.rules = [
     "d /home/mkrstn/.vibe 0700 mkrstn users -"
   ];
+
+  services.usbguard.ruleFile = config.age.secrets.usbguard-rules.path;
 }

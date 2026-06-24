@@ -11,6 +11,7 @@
     in
     {
       options.stow = {
+        enable = lib.mkEnableOption "stow";
         location = lib.mkOption {
           type = lib.types.str;
         };
@@ -26,7 +27,7 @@
           );
           normalUsers = lib.filterAttrs (name: user: user.isNormalUser) config.users.users;
         in
-        lib.mkIf (builtins.length cfg.packages > 0) {
+        lib.mkIf (builtins.length cfg.packages > 0 && cfg.enable) {
           systemd.services = lib.mkMerge (
             lib.mapAttrsToList (username: _: {
               "stow-${username}" = {

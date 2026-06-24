@@ -26,7 +26,6 @@
         };
         gnome = {
           core-apps.enable = false;
-          gnome-software.enable = true;
         };
       };
       environment = {

@@ -1,12 +1,12 @@
 {
   flake.nixosModules.core-boot =
-    { pkgs, config, ... }:
+    { pkgs, config, lib, ... }:
     {
       boot = {
         kernelPackages = pkgs.linuxPackages_latest;
         extraModulePackages = [ config.boot.kernelPackages.ddcci-driver ];
         loader = {
-          timeout = 0;
+          timeout = lib.mkDefault 0;
           efi.canTouchEfiVariables = true;
           systemd-boot = {
             enable = true;

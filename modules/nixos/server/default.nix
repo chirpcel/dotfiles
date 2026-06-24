@@ -1,6 +1,7 @@
+{ config, ... }:
 {
   flake.nixosModules.server = {
-    imports = with flake.nixosModules; [
+    imports = with config.flake.nixosModules; [
       server-ssh
     ];
   };
