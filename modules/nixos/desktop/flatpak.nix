@@ -14,7 +14,9 @@
             location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
           }
         ];
+        packages = [
+          "io.github.kolunmi.Bazaar"
+        ];
       };
-      environment.systemPackages = with pkgs; [ bazaar ];
     };
 }

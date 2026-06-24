@@ -1,6 +1,11 @@
 {
   flake.nixosModules.core-boot =
-    { pkgs, config, lib, ... }:
+    {
+      pkgs,
+      config,
+      lib,
+      ...
+    }:
     {
       boot = {
         kernelPackages = pkgs.linuxPackages_latest;

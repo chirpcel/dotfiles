@@ -5,6 +5,8 @@
     development-direnv
     development-gnupg
     development-ide
+    development-toolbox
     development-vcs
+    development-virtualisation
   ];
 }

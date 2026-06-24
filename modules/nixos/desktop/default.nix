@@ -5,6 +5,7 @@
     {
       imports = with config.flake.nixosModules; [
         desktop-browser
+        desktop-file-sharing
         desktop-flatpak
         desktop-gtk
         desktop-keyboard
@@ -18,10 +19,7 @@
         desktopManager.gnome = {
           enable = true;
           sessionPath = with pkgs; [
-            gnomeExtensions.blur-my-shell
-            gnomeExtensions.paperwm
             gnomeExtensions.dash-to-dock
-            gnomeExtensions.clipboard-indicator
           ];
         };
         gnome = {

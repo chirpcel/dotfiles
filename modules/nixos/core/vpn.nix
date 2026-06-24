@@ -1,10 +1,9 @@
 {
-  flake.nixosModules.core-proton =
+  flake.nixosModules.core-vpn =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [
         proton-vpn-cli
-        proton-pass-cli
       ];
     };
 }

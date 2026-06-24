@@ -5,7 +5,7 @@
     };
     services.flatpak = {
       packages = [
-       "de.wwwtech.gitte"
+        "de.wwwtech.gitte"
       ];
     };
     stow.packages = [ "git" ];

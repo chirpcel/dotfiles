@@ -2,17 +2,10 @@
   flake.nixosModules.desktop-terminal =
     { pkgs, ... }:
     {
-      environment.systemPackages = with pkgs; [
-        ghostty
-      ];
-      xdg.terminal-exec = {
-        enable = true;
-        settings = {
-          default = [
-            "ghostty.desktop"
-          ];
-        };
+      services.flatpak = {
+        packages = [
+          "app.devsuite.Ptyxis"
+        ];
       };
-      stow.packages = [ "ghostty" ];
     };
 }

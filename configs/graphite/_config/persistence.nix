@@ -18,10 +18,12 @@
       "/etc/NetworkManager/system-connections"
     ];
     users.mkrstn = {
+      files = [
+        ".config/monitors.xml"
+      ];
       directories = [
         ".var/app"
         ".config/dconf"
-        ".config/paperwm"
         ".local/share/keyrings"
         ".local/share/fish"
         ".local/share/direnv"

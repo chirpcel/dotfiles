@@ -23,7 +23,7 @@
       config =
         let
           stowScript = pkgs.writeShellScript "apply-dotfiles.sh" (
-            builtins.readFile ./_stow/apply-dotfiles.sh
+            builtins.readFile ../../../assets/scripts/apply-dotfiles.sh
           );
           normalUsers = lib.filterAttrs (name: user: user.isNormalUser) config.users.users;
         in

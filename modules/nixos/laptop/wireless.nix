@@ -3,15 +3,14 @@
     { lib, ... }:
     {
       networking = {
-        wireless = {
-          enable = lib.mkForce false;
-          iwd = {
-            enable = true;
-          };
-        };
         networkmanager.wifi = {
           backend = "iwd";
           powersave = true;
+        };
+        networkmanager.settings = {
+          device = {
+            "wifi.iwd.autoconnect" = false;
+          };
         };
       };
       hardware.bluetooth = {
