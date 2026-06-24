@@ -152,7 +152,7 @@
                           ];
                         };
                         "/@cache" = {
-                          mountpoint = "/home/mkersten/.cache";
+                          mountpoint = "/home/mkrstn/.cache";
                           mountOptions = [
                             "compress=zstd"
                             "noatime"
