@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.nixosModules.core-comma = {
+  flake.nixosModules.extra-comma = {
     imports = [
       inputs.nix-index-database.nixosModules.default
     ];

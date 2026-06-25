@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.core-vpn =
+  flake.nixosModules.extra-vpn =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [

@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.core-nix =
+  flake.nixosModules.extra-nix =
     {
       config,
       lib,

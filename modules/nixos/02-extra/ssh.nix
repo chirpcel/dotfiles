@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.core-ssh =
+  flake.nixosModules.extra-ssh =
     { lib, ... }:
     {
       services.openssh = {

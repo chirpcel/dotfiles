@@ -11,7 +11,7 @@
     system = "x86_64-linux";
     modules = [
       config.flake.diskoConfigurations.default
-      config.flake.nixosModules.core
+      config.flake.nixosModules.extra
       config.flake.nixosModules.server
       ./_config
     ];

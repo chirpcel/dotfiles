@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.core-nh = {
+  flake.nixosModules.extra-nh = {
     programs.nh = {
       enable = true;
     };

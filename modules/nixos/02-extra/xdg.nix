@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.core-xdg = {
+  flake.nixosModules.extra-xdg = {
     environment.variables = {
       XDG_DESKTOP_DIR = "$HOME/desktop";
       XDG_DOCUMENTS_DIR = "$HOME/documents";

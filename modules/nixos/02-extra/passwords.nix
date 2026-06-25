@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.core-passwords =
+  flake.nixosModules.extra-passwords =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [

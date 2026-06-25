@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.nixosModules.core-security =
+  flake.nixosModules.extra-security =
     { config, ... }:
     {
       imports = [
@@ -25,7 +25,7 @@
         enable = true;
         settings = {
           cue = true;
-          #authfile = config.age.secrets.u2f-authfile.path;
+          authfile = config.age.secrets.u2f-authfile.path;
         };
       };
       services.usbguard = {

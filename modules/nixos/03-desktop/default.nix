@@ -4,23 +4,12 @@
     { pkgs, ... }:
     {
       imports = with config.flake.nixosModules; [
-        desktop-audio-player
+        extra
         desktop-browser
-        desktop-calendar
-        desktop-contacts
-        desktop-disk-info
-        desktop-document-viewer
-        desktop-file-sharing
         desktop-flatpak
         desktop-gtk
-        desktop-keyboard
-        desktop-picture-viewer
-        desktop-proton
         desktop-security
-        desktop-splash
         desktop-terminal
-        desktop-text-editor
-        desktop-video-player
       ];
       services = {
         displayManager.gdm.enable = true;
