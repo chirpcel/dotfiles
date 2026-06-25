@@ -7,6 +7,7 @@
 
 {
   imports = [
+    ./lid-extra.nix
     ./persistence.nix
     ./secure-boot.nix
   ];

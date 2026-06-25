@@ -36,7 +36,7 @@
       };
       environment = {
         systemPackages = with pkgs; [ nautilus ];
-        gnome.excludePackages = with pkgs; [ gnome-tour  ];
+        gnome.excludePackages = with pkgs; [ gnome-tour ];
       };
     };
 }

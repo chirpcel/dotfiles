@@ -1,6 +1,11 @@
 {
   flake.nixosModules.core-nix =
-    { config, lib, ... }:
+    {
+      config,
+      lib,
+      pkgs,
+      ...
+    }:
     {
       nix.settings.experimental-features = [
         "nix-command"

@@ -8,6 +8,7 @@
     core-editor
     core-file-sharing
     core-firmware
+    core-kmscon
     core-locale
     core-network
     core-nh
