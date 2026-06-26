@@ -2,7 +2,8 @@
   flake.nixosModules.desktop-browser = {
     services.flatpak = {
       packages = [
-        "com.brave.Browser"
+        "io.gitlab.librewolf-community"
+        "dev.qwery.AddWater"
       ];
     };
   };

@@ -2,7 +2,6 @@
 {
   flake.nixosModules.extra.imports = with config.flake.nixosModules; [
     core
-    extra-agenix
     extra-comma
     extra-firmware
     extra-nh
