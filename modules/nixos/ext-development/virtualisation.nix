@@ -5,8 +5,5 @@
       "org.gnome.Boxes"
     ];
     virtualisation.podman.enable = true;
-    programs.fish.interactiveShellInit = ''
-      export CONTAINER_HOST="unix:///run/user/$(id -u)/podman/podman.sock"
-    '';
   };
 }

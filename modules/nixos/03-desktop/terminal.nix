@@ -4,9 +4,10 @@
       packages = [
         "app.devsuite.Ptyxis"
       ];
-      overrides."app.devsuite.Ptyxis" = {
-        Context.devices = [ "all" ];
+      overrides."app.devsuite.Ptyxis".Context = {
+        devices = [ "all" ];
       };
     };
+    stow.packages = [ "ptyxis" ];
   };
 }

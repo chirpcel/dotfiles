@@ -13,6 +13,6 @@ if [ ! -d "${dotPath}" ]; then
 fi
 
 echo "Applying stow for user ${user}, packages: ${packages[*]}"
-stow --dir="${dotPath}" --target="${targetHome}" --stow "${packages[@]}"
+stow --adopt --dir="${dotPath}" --target="${targetHome}" --stow "${packages[@]}"
 
 echo "Stow completed successfully for ${user}"

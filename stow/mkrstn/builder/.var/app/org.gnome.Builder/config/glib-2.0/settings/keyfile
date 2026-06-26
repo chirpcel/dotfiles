@@ -1,0 +1,6 @@
+[org/gnome/builder/editor]
+style-scheme-name='Adwaita-dark'
+
+[org/gnome/builder]
+window-size=(-1, -1)
+window-maximized=true
