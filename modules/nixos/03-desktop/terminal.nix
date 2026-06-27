@@ -8,6 +8,5 @@
         devices = [ "all" ];
       };
     };
-    stow.packages = [ "ptyxis" ];
   };
 }

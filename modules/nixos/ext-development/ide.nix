@@ -4,10 +4,9 @@
       packages = [
         "org.gnome.Builder"
       ];
-      overrides."app.devsuite.Ptyxis".Context = {
+      overrides."org.gnome.Builder".Context = {
         devices = [ "all" ];
       };
     };
-    stow.packages = [ "builder" ];
   };
 }

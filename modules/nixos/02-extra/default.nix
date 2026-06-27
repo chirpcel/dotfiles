@@ -4,11 +4,10 @@
     core
     extra-comma
     extra-firmware
-    extra-nh
     extra-passwords
+    extra-sandbox
     extra-security
     extra-ssh
     extra-vpn
-    extra-xdg
   ];
 }
