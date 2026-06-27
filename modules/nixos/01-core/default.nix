@@ -11,6 +11,7 @@
     core-kmscon
     core-locale
     core-network
+    core-nix
     core-shell
     core-stow
   ];

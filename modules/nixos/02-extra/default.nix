@@ -5,7 +5,6 @@
     extra-comma
     extra-firmware
     extra-nh
-    extra-nix
     extra-passwords
     extra-security
     extra-ssh

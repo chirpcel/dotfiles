@@ -14,6 +14,7 @@
         enable = lib.mkEnableOption "stow";
         location = lib.mkOption {
           type = lib.types.str;
+          default = "/etc/nixos/stow";
         };
         packages = lib.mkOption {
           type = lib.types.listOf lib.types.str;
