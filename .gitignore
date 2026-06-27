@@ -1,2 +1,4 @@
 .direnv
 result
+**/nono/.config/nono/packages/**
+**/nono/.config/nono/profile-drafts/**

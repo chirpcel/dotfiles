@@ -3,6 +3,9 @@
     { pkgs, lib, ... }:
     {
       environment.systemPackages = with pkgs; [
+        (pkgs.writeScriptBin "pi" ''
+          exec ${pkgs.nono}/bin/nono run --profile always-further/pi --allow-cwd -- ${pkgs.pi-coding-agent}/bin/pi "$@"
+        '')
         (pkgs.symlinkJoin {
           name = "${lib.getName nono}-wrapped-${lib.getVersion nono}";
           paths = [ nono ];

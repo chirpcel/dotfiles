@@ -32,5 +32,7 @@
         enable = true;
         IPCAllowedGroups = [ "wheel" ];
       };
+      security.pam.services.polkit-1.rules.auth.fprintd.order =
+        config.security.pam.services.polkit-1.rules.auth.u2f.order - 10;
     };
 }

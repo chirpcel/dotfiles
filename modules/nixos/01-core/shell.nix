@@ -6,14 +6,12 @@
         enable = true;
         useBabelfish = true;
       };
-      programs.starship = {
-        enable = true;
-        transientPrompt.enable = true;
-      };
+      environment.systemPackages = with pkgs; [
+        fishPlugins.hydro
+      ];
       users.defaultUserShell = pkgs.fish;
       stow.packages = [
         "fish"
-        "starship"
       ];
     };
 }

@@ -6,12 +6,28 @@
     lidEventCommands = ''
       case "$1" in
         *close)
-          echo "lid closed, block finerprint"
+          echo "$(date): lid closed, blocking fingerprint" >> /tmp/lid-events.log
           ${pkgs.usbguard}/bin/usbguard block-device 27c6:658c
           ;;
         *open)
-          echo "lid opened, allow finerprint"
+          echo "$(date): lid opened, allowing fingerprint" >> /tmp/lid-events.log
           ${pkgs.usbguard}/bin/usbguard allow-device 27c6:658c
+
+          # Give kernel time to re-enumerate
+          ${pkgs.coreutils}/bin/sleep 0.5
+
+          # Push kernel udev to propagate the change
+          ${pkgs.udev}/bin/udevadm trigger --action=add --subsystem-match=usb
+          ${pkgs.udev}/bin/udevadm settle
+
+          # Force fprintd to rediscover devices via its D-Bus API
+          ${pkgs.dbus}/bin/dbus-send --system --dest=org.freedesktop.fprintd \
+            --type=method_call \
+            /org/freedesktop/fprintd/Manager \
+            org.freedesktop.fprintd.Manager.GetDevice 2>/dev/null || true
+
+          # Fallback: gentle daemon reload if D-Bus ping didn't help
+          systemctl --user restart fprintd 2>/dev/null || systemctl restart fprintd
           ;;
       esac
     '';

@@ -5,6 +5,7 @@
     core-agenix
     core-boot
     core-editor
+    core-fonts
     core-hardware
     core-keyboard
     core-kmscon

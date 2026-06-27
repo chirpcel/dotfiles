@@ -16,6 +16,7 @@
         desktopManager.gnome = {
           enable = true;
           sessionPath = with pkgs; [
+            gnomeExtensions.blur-my-shell
             gnomeExtensions.dash-to-dock
           ];
         };
