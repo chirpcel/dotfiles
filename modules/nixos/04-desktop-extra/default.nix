@@ -8,6 +8,7 @@
     desktop-disk-info
     desktop-document-viewer
     desktop-file-sharing
+    desktop-imager-writer
     desktop-keyring
     desktop-picture-viewer
     desktop-proton

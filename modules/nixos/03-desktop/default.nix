@@ -16,8 +16,11 @@
         desktopManager.gnome = {
           enable = true;
           sessionPath = with pkgs; [
-            gnomeExtensions.blur-my-shell
+            imagemagick
+            gnomeExtensions.kiwi-is-not-apple
             gnomeExtensions.dash-to-dock
+            gnomeExtensions.light-style
+            gnomeExtensions.clipboard-indicator
           ];
         };
         gnome = {

@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, self, ... }:
 {
   environment.etc."issue".text = ''
      █████╗ ███╗   ███╗ ██████╗ ██████╗ ██████╗ ██╗  ██╗
@@ -12,4 +12,5 @@
   system.stateVersion = "26.05";
   boot.zfs.forceImportRoot = false;
   boot.supportedFilesystems.zfs = lib.mkForce false;
+  environment.etc."nixos".source = self.outPath;
 }

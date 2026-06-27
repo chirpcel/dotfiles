@@ -1,8 +1,8 @@
 [org/gnome/Ptyxis]
 profile-uuids=['14953bd256734a8cd325aece6a3b8273']
 default-profile-uuid='14953bd256734a8cd325aece6a3b8273'
-use-system-font=false
-window-size=(171, 46)
+use-system-font=true
+window-size=(190, 48)
 font-name='Adwaita Mono 12'
 interface-style='system'
 
